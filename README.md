@@ -11,6 +11,7 @@ Ensure that PostgreSQL is installed and running on the new machine.
  `-U` stands for user and `-d` stands for database. 
 
 Connect to PostgreSQL as the default `postgres`. 
+
 Enter this in your cmd/terminal.
 
 ```bash
