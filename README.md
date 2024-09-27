@@ -12,7 +12,7 @@ Ensure that PostgreSQL is installed and running on the new machine.
 
 Connect to PostgreSQL as the default `postgres`. 
 
-Enter this in your cmd/terminal.
+#### Enter this in your cmd/terminal.
 
 ```bash
 psql -U postgres -d postgres
