@@ -44,7 +44,7 @@ Change `username`
 psql -U username -d postgres
 ```
 
-#### Enter `password` if not change in STAGE 2;
+#### Enter password as `password` if not change in STAGE 2;
 
 ### 4. Create new database
 ```bash
