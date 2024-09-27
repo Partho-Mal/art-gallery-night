@@ -115,3 +115,37 @@ Change the `username`
 psql -U username -d nodelogin
 ```
 
+### Additional commands
+
+To `CLEAR` cmd/terminal in psql, use:
+```sql
+/! cls;
+```
+To `QUIT` from psql to terminal
+```sql
+\q
+```
+To `DELETE users` from database
+In below example deleting users 1 and 2
+```sql
+DELETE FROM users WHERE id IN (1, 2);
+```
+To `DELETE images` from database
+In below example deleting images 1 and 2
+```sql
+DELETE FROM images WHERE id IN (1, 2);
+```
+
+To reset the sequence/id if some user is deleted manually through cmd
+
+change RESTART WITH `1` as you like
+```sql
+ALTER SEQUENCE users_id_seq RESTART WITH 1;
+```
+
+To reset the sequence/id if some images is deleted manually through cmd
+
+change RESTART WITH `1` as you like
+```sql
+ALTER SEQUENCE images_id_seq RESTART WITH 1;
+```
