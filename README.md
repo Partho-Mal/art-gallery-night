@@ -92,14 +92,42 @@ Create the sequence for `images_id_seq`:
 ```sql
 CREATE SEQUENCE images_id_seq;
 ```
-### 7. Verify the Structure
+
+### 7. `exhibitions` Table
+```sql
+CREATE TABLE public.exhibitions (
+    id serial PRIMARY KEY,
+    name character varying(100),
+    image_url text,
+    description text,
+    user_id integer,
+    view_exhibition_url character varying(255)
+);
+```
+### 8. `user_exhibitions` Table
+```sql
+CREATE TABLE public.user_exhibitions (
+    id serial PRIMARY KEY,
+    name character varying(255) NOT NULL,
+    description text,
+    image_url character varying(255),
+    user_id integer,
+    created_at timestamp without time zone DEFAULT CURRENT_TIMESTAMP,
+    view_exhibition_url character varying(255),
+    CONSTRAINT user_exhibitions_user_id_fkey FOREIGN KEY (user_id)
+        REFERENCES public.users (id) ON DELETE CASCADE
+);
+```
+
+### 9. Verify the Structure
 
 To verify the structure of the tables:
 ```bash
 \d users
 \d images
 ```
-### 8. Set Access Privileges (Optional)
+
+### 10. Set Access Privileges (Optional)
 
 Grant privileges if needed:
 
