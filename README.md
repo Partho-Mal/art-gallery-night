@@ -80,13 +80,20 @@ Create the `images` table:
 
 ```sql
 CREATE TABLE images (
-    id SERIAL NOT NULL PRIMARY KEY,
-    public_id VARCHAR(255) NOT NULL,
-    url VARCHAR(255) NOT NULL,
-    created_at TIMESTAMP DEFAULT now(),
-    user_id INTEGER NOT NULL,
-    CONSTRAINT fk_user FOREIGN KEY(user_id) REFERENCES users(id) ON DELETE CASCADE
+    id integer NOT NULL DEFAULT nextval('images_id_seq'::regclass),
+    public_id character varying(255) NOT NULL,
+    url character varying(255) NOT NULL,
+    created_at timestamp without time zone DEFAULT now(),
+    user_id integer NOT NULL,
+    title character varying(255) NOT NULL DEFAULT 'Untitled',
+    year character varying(10),
+    artist character varying(255),
+    technique character varying(255),
+    genre character varying(100),
+    PRIMARY KEY (id),
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 );
+
 ```
 Create the sequence for `images_id_seq`:
 ```sql
