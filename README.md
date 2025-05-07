@@ -164,6 +164,8 @@ CREATE TABLE public.exhibitions (
 );
 
 ```
+<br>
+<br>
 
 ### 8. `user_exhibitions` Table
 ```sql
@@ -196,6 +198,9 @@ CREATE TABLE public.user_exhibitions (
         REFERENCES public.users (id) ON DELETE CASCADE
 );
 ```
+
+<br>
+<br>
 
 ### 9. Verify the Structure
 
